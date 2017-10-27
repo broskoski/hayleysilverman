@@ -9,15 +9,14 @@ html {
 }
 
 body {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   margin: 0;
   padding: 0;
   font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
   font-size: 15px;
   line-height: 1.33;
   -webkit-font-smoothing: antialiased;
-  font-weight: bold;
 }
 
 a {
@@ -40,28 +39,89 @@ h3 {
   margin: 0;
 }
 
-.ChannelTitle {
-  margin: 3em;
+.Header {
+  margin: 3em 0;
   text-align: center;
   font-weight: bold;
 }
 
+.Header iframe{
+  width: 500px;
+}
+
 .Grid {
-  margin: 5px;
+  width: 100%;
+  height: 100%;
+  padding: 0 2em 2em;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .GridBlock {
   display: inline-block;
-  /*max-width: 250px;*/
+  padding: 0.5em;
+  max-width: 550px;
 }
-  .GridBlock > img {
-    opacity: 0;
-    transition: opacity 500ms;
-    background-color: #ccc;
-  }
-    .GridBlock > .img--loaded {
-      opacity: 1;
-    }
+.GridBlock.GridBlock--Text {
+  display: block;
+  max-width: 100%;
+}
+
+.GridBlock > img {
+  opacity: 0;
+  transition: opacity 500ms;
+  background-color: #ccc;
+}
+
+.GridBlock > .img--loaded {
+  opacity: 1;
+}
+
+.GridBlock > figure {
+  position: relative;
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  line-height: 0;
+}
+
+.GridBlock > figure img {
+  transition: opacity 0.4s; 
+}
+.GridBlock > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.GridBlock > figure figcaption {
+  opacity: 0;
+  transition: opacity 0.3s;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  padding: 1.2em;
+  font-size: 12px;
+  text-align: left;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000;
+}
+
+.GridBlock > figure figcaption p {
+  margin: 0;
+}
+
+figure:hover img {
+  opacity: 0.9; 
+}
+
+figure:hover figcaption {
+  opacity: 1; 
+}
 
 .Block {
   display: flex;
@@ -69,12 +129,8 @@ h3 {
   height: 75vh;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 2em;
 }
-  .Block > img {
-    max-width: 100%;
-    max-height: 100%;
-  }
 
 .BlockMetadata {
   display: flex;

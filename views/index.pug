@@ -1,14 +1,21 @@
 extends layout
 
 block content
-  h1.ChannelTitle
-    = title
+  h1.Header
+    iframe(src="http://xxith.com/?year=1986&month=April&day=08&bgcolor=white" frameborder="0" height="150")
 
   .Grid
-    each block in helpers.shuffle(contents)
-      if block.image
-        a.GridBlock(
-          href='/blocks/' + block.id
-          style='width: ' + helpers.rand(100, 400) + 'px;'
-        )
-          img(src=block.image.display.url)
+    each block in contents
+      case block.class
+        when "Text"
+          .GridBlock.GridBlock--Text!= block.content_html
+        default
+          if block.image
+            a.GridBlock(
+              href='/blocks/' + block.id
+            )
+              figure
+                img(src=block.image.display.url)
+                if block.description_html
+                  figcaption!= helpers.stripLinks(block.description_html)
+
