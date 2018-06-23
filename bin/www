@@ -4,7 +4,7 @@ const app = require('../app');
 const debug = require('debug')('warburg:server');
 const http = require('http');
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -55,9 +55,10 @@ function onError(error) {
 }
 
 function onListening() {
+  console.log('onlistening');
   const addr = server.address();
   const bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
 }

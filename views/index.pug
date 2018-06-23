@@ -6,16 +6,18 @@ block content
 
   .Grid
     each block in contents
-      case block.class
-        when "Text"
-          .GridBlock.GridBlock--Text!= block.content_html
-        default
-          if block.image
-            a.GridBlock(
-              href='/blocks/' + block.id
-            )
-              figure
-                img(src=block.image.display.url)
-                if block.description_html
-                  figcaption!= helpers.stripLinks(block.description_html)
+      if block
+        case block.class
+          when "Text"
+            .GridBlock.GridBlock--Text!= block.content_html
+          default
+            if block.image
+              a.GridBlock(
+                href='/blocks/' + block.id
+                id=block.id
+              )
+                figure
+                  img(src=block.image.display.url)
+                  if block.description_html
+                    figcaption!= helpers.stripLinks(block.description_html)
 

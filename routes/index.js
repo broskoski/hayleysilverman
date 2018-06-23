@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
   const arena = new Arena;
 
   arena
-    .channel(process.env.ARENA_CHANNEL_ID)
+    .fullChannel("hayleysilverman-com")
     .then(data =>
       res.render('index', data)
     );
