@@ -4,8 +4,8 @@ block content
   if image
     .Block(style="background-image: url(" + image.original.url + ")")
 
-  .BlockMetadata
-    if description_html
+  if description_html
+    .BlockMetadata
       .BlockMetadata__description
         != helpers.addLinkTarget(description_html)
 
