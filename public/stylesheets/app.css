@@ -164,6 +164,10 @@ figure:hover figcaption {
   padding: 0.25em;
 }
 
+.BlockDown {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     padding: 2.5em;
@@ -178,6 +182,17 @@ figure:hover figcaption {
     top: 100%;
     bottom: auto;
     margin-bottom: 10em;
+  }
+  .BlockDown {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    line-height: 0.5;
+    padding: 0.25em;
   }
   .Header iframe{
     width: 100%;
