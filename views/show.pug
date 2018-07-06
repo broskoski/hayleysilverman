@@ -1,12 +1,13 @@
 extends layout
 
 block content
-  if image
-    .Block(style="background-image: url(" + image.original.url + ")")
+  .BlockContainer
+    if image
+      .Block(style="background-image: url(" + image.original.url + ")")
 
-  if description_html
-    .BlockMetadata
-      .BlockMetadata__description
-        != helpers.addLinkTarget(description_html)
+    if description_html
+      .BlockMetadata
+        .BlockMetadata__description
+          != helpers.addLinkTarget(description_html)
 
-  a.BlockBack(href="/#" + id) ×
+    a.BlockBack(href="/#" + id) ×
