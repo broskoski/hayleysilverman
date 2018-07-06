@@ -169,12 +169,15 @@ figure:hover figcaption {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    padding: 2.5em;
+  body, html {
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
   }
   .BlockContainer {
-    height: 100vh;
+    height: 100%;
     position: relative;
+    
   }
   .BlockMetadata {
     width: 100%;
@@ -186,7 +189,7 @@ figure:hover figcaption {
   .BlockDown {
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 0.25em;
     left: 0;
     width: 100%;
     text-align: center;
