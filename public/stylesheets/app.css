@@ -17,6 +17,7 @@ body {
   font-size: 15px;
   line-height: 1.33;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 a {
@@ -40,13 +41,23 @@ h3 {
 }
 
 .Header {
-  margin: 3em 0;
+  margin: 2em 0 1em;
   text-align: center;
   font-weight: bold;
+  font-family: serif;
 }
 
 .Header iframe{
   width: 500px;
+}
+
+.Name {
+  position: absolute;
+  top: 0em;
+  right: 2em;
+  font-weight: bold;
+  font-family: 'Trattatello', fantasy;
+  line-height: 1;
 }
 
 .Grid {
@@ -199,5 +210,9 @@ figure:hover figcaption {
   }
   .Header iframe{
     width: 100%;
+  }
+
+  .Name {
+    top: 2em;
   }
 }
