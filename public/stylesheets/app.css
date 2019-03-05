@@ -2,6 +2,10 @@ html {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 *,
 *:before,
 *:after {
@@ -175,6 +179,11 @@ figure:hover figcaption {
   padding: 0.25em;
 }
 
+.BlockContainer {
+  height: 100%;
+  position: relative;
+}
+
 .BlockDown {
   display: none;
 }
@@ -185,11 +194,7 @@ figure:hover figcaption {
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
   }
-  .BlockContainer {
-    height: 100%;
-    position: relative;
-    
-  }
+  
   .BlockMetadata {
     width: 100%;
     font-size: 12px;
